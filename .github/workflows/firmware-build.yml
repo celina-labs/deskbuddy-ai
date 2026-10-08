@@ -1,0 +1,48 @@
+name: Firmware Build
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firmware-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: PlatformIO Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install PlatformIO
+        run: python -m pip install --upgrade platformio
+
+      - name: Create CI placeholder secrets
+        run: |
+          cat <<'EOF' > src/secrets.h
+          #pragma once
+          #define ssid "ci-network"
+          #define password "ci-password"
+          #define geminiApiKey "ci-api-key"
+          #define geminiModel "ci-model"
+          EOF
+
+      - name: Build firmware
+        run: pio run --environment seeed_xiao_esp32s3
