@@ -295,7 +295,7 @@ static String frageGeminiMitDatei(const String& fileUri, const String& mimeType)
   return String(answer);
 }
 
-// Fuehrt den kompletten KI-Ablauf einmal durch.
+// Fuehrt den kompletten KI Ablauf einmal durch.
 void starteSprachAblauf() {
   Serial.println("Starte Sprachablauf...");
 
