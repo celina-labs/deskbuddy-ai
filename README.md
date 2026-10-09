@@ -1,20 +1,18 @@
 <h1 align="center">DeskBuddy AI</h1>
 
 <p align="center">
-  A compact ESP32-S3 desk robot with animated eyes, focus tools, and a Gemini-powered voice assistant.
+  A compact ESP32 desk robot with animated eyes, focus tools, and a Gemini powered voice assistant.
 </p>
 
-<!-- Add the demo GIF here:
 <p align="center">
-  <img src="media/deskbuddy-demo.gif" alt="DeskBuddy AI demo" width="520">
+  <img src="media/deskbuddy.gif" alt="DeskBuddy AI" width="520">
 </p>
--->
 
 ## About
 
-DeskBuddy AI combines embedded hardware, a minimal touch interface, and generative AI in a small 3D-printed desk robot.
+DeskBuddy AI combines embedded hardware, a minimal touch interface, and generative AI in a small 3D printed desk robot.
 
-The firmware was developed with PlatformIO and is structured into separate modules for touch input, timers, audio recording, display rendering, Wi-Fi, and Gemini communication.
+The firmware was developed with PlatformIO and is structured into separate modules for touch input, timers, audio recording, display rendering, WiFi, and Gemini communication.
 
 ## Features
 
