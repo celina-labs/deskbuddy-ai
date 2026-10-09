@@ -13,7 +13,7 @@
 #define MIC_I2S_PORT I2S_NUM_0
 
 static const int sampleRate = 16000;
-static const int recordSeconds = 3;
+static const int recordSeconds = 5;
 static const int bitsPerSample = 16;
 static const int channels = 1;
 
